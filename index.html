@@ -37,7 +37,7 @@
   .bg-brand{background:var(--color-brand);}
   .text-brand{color:var(--color-brand);}
   .text-soft{color:var(--color-ink-soft);}
-  .eyebrow{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:var(--color-brand);}
+  .eyebrow{font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:var(--color-brand);}
   .btn{display:inline-block;border-radius:10px;padding:12px 28px;font-size:18px;font-weight:600;box-shadow:0 1px 3px rgba(0,0,0,.15);transition:background .15s,color .15s;}
   .btn-primary{background:var(--color-brand);color:#fff;}
   .btn-primary:hover{background:var(--color-brand-strong);}
@@ -216,18 +216,20 @@
   /* co umim */
   .service-detail{display:grid;grid-template-columns:1fr;gap:22px;margin-bottom:52px;align-items:center;}
   @media(min-width:860px){.service-detail{grid-template-columns:300px 1fr;gap:48px;}}
-  .service-detail .illu{display:flex;align-items:center;justify-content:center;}
+  .service-detail .illu{display:flex;align-items:flex-start;justify-content:center;gap:16px;}
   .service-detail .illu img{width:100%;max-width:280px;height:auto;display:block;}
   @media(min-width:860px){
     .service-detail:nth-of-type(even){grid-template-columns:1fr 300px;}
     .service-detail:nth-of-type(even) .illu{order:2;}
   }
   .service-detail .icon{width:56px;height:56px;border-radius:16px;background:rgba(221,105,66,.1);color:var(--color-brand);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-  .service-detail .idx{display:block;font-size:38px;font-weight:800;line-height:1;letter-spacing:-0.02em;color:var(--color-brand);margin-bottom:6px;}
+  .service-detail .idx{flex:none;font-size:40px;font-weight:800;line-height:1;letter-spacing:-0.02em;color:var(--color-brand);padding-top:6px;}
   .service-detail h2{margin-top:4px;}
   .service-detail .body{margin-top:14px;display:flex;flex-direction:column;gap:18px;color:var(--color-ink-soft);font-size:17px;line-height:1.8;}
-  .pill-row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:32px;}
-  .pill{border:1px solid var(--color-line);background:#fff;border-radius:999px;padding:8px 20px;font-size:14px;font-weight:600;color:var(--color-ink-soft);}
+  .pill-row{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:34px;}
+  .pill{display:inline-flex;align-items:center;gap:12px;border:0;background:#fff;border-radius:999px;padding:14px 26px;font-size:15px;font-weight:600;color:var(--color-ink);box-shadow:0 6px 20px rgba(221,105,66,.12);line-height:1.25;text-align:left;}
+  .pill svg{flex:none;color:var(--color-brand);}
+  .pill-more{background:rgba(221,105,66,.13);box-shadow:none;}
 
   /* jak to funguje */
   .jstep{display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:40px;}
@@ -298,6 +300,10 @@
   .wave-section{position:relative;overflow:hidden;}
   .wave-section > .wrap{position:relative;z-index:10;}
   .wave-svg{position:absolute;z-index:0;pointer-events:none;user-select:none;}
+  .kontakt-wave-el{position:absolute;left:-190px;bottom:-190px;z-index:0;width:620px;max-width:none;transform:rotate(18deg);pointer-events:none;user-select:none;}
+  .ctyri-wave-el{position:absolute;right:-150px;bottom:-180px;z-index:0;width:560px;max-width:none;pointer-events:none;user-select:none;}
+  .sluzby-wave-el{position:absolute;right:-170px;top:-150px;z-index:0;width:560px;max-width:none;transform:scaleX(-1);pointer-events:none;user-select:none;}
+  .wave-section > .fourofour{position:relative;z-index:10;}
 </style>
 </head>
 <body>
@@ -513,51 +519,47 @@
       </div>
     </div></header>
 <section class="bg-white">
-  <div class="wrap center" style="max-width:640px;">
+  <div class="wrap center" style="max-width:800px;">
     <p class="eyebrow">Co umím?</p>
-    <img class="hero-illu" src="images/ill-silny.png" alt="Robot Plechajda zvedá činku" style="width:100%;max-width:300px;height:auto;margin:0 auto 6px;display:block;" />
+    <img class="hero-illu" src="images/ill-silny.png" alt="Robot Plechajda zvedá činku" style="width:100%;max-width:440px;height:auto;margin:0 auto 10px;display:block;" />
     <h1 style="font-size:34px;">Tady jsou věci, ve kterých jsem silný</h1>
     <p class="lead">Jsem možná trochu plechový, ale přesto dost chytrý. Dělám mechanickou, opakující se práci kolem e-shopů — rychle, spolehlivě a beze ztráty trpělivosti. Tady je to, co řeším nejčastěji.</p>
   </div>
 </section>
-<section>
+<section class="wave-section">
+  <img src="images/img-03-14a2f4b6d5.png" alt="" aria-hidden="true" class="sluzby-wave-el" />
   <div class="wrap" style="max-width:1040px;">
     <article class="service-detail">
-      <div class="illu"><img src="images/ill-popisky.png" alt="Notebook s recenzí produktu a psaní popisku" /></div>
+      <div class="illu"><span class="idx">01</span><img src="images/ill-popisky.png" alt="Notebook s recenzí produktu a psaní popisku" /></div>
       <div>
-        <span class="idx">01</span>
         <h2>Napíšu produktové popisky</h2>
         <div class="body"><p>Tohle dělám ze všeho nejvíc. Z vašich parametrů, feedů nebo podkladů od výrobce napíšu popisky, které čtenáři dávají smysl a vám drží jednotný tón napříč celým sortimentem.</p><p>Zvládnu to ve velkém — ať jde o desítky nových produktů, nebo o tisíce položek, kterým chybí pořádný text. Dohlídnu, aby popisky seděly k parametrům, byly čitelné pro lidi i vyhledávače a nezněly, jako by je psal stroj. (I když je, popravdě, psal.)</p></div>
       </div>
     </article>
 <article class="service-detail">
-      <div class="illu"><img src="images/ill-seo.png" alt="Kategorie e-shopu s odškrtnutými filtry a graf růstu" /></div>
+      <div class="illu"><span class="idx">02</span><img src="images/ill-seo.png" alt="Kategorie e-shopu s odškrtnutými filtry a graf růstu" /></div>
       <div>
-        <span class="idx">02</span>
         <h2>Naplním SEO kategorie a filtrační stránky</h2>
         <div class="body"><p>Parametrické kategorie na Shoptetu, filtrační stránky na Upgates a podobné automaticky generované stránky bývají prázdné nebo mají jen kusý text — přitom to jsou přesně ty stránky, na které lidé z Googlu klikají nejradši.</p><p>Doplním jim chybějící data, napíšu jim texty a postarám se, aby dávaly smysl jak zákazníkům, tak vyhledávačům. Výsledkem je víc stránek, které vám reálně přivádí návštěvnost, aniž byste je museli ručně sepisovat jednu po druhé.</p></div>
       </div>
     </article>
 <article class="service-detail">
-      <div class="illu"><img src="images/ill-parametry.png" alt="Kontrolní seznam parametrů s ozubeným kolem" /></div>
+      <div class="illu"><span class="idx">03</span><img src="images/ill-parametry.png" alt="Kontrolní seznam parametrů s ozubeným kolem" /></div>
       <div>
-        <span class="idx">03</span>
         <h2>Zkontroluju parametry</h2>
         <div class="body"><p>U produktů s desítkami parametrů se snadno stane, že se na e-shop dostane chyba — překlep, špatně přenesený údaj, starý rozměr. A zákazník vám pak vrací zboží, které „nesedělo".</p><p>Projdu vaše produktové údaje a porovnám je s tím, co má výrobce ve svých manuálech a technických listech. Kde něco nesedí, vás upozorním. Hodí se to hlavně u složitějšího sortimentu, kde je parametrů hodně a ručně se to kontroluje těžko.</p></div>
       </div>
     </article>
 <article class="service-detail">
-      <div class="illu"><img src="images/ill-konfigurator.png" alt="Konfigurátor produktu – výběr rozměru, materiálu a barvy" /></div>
+      <div class="illu"><span class="idx">04</span><img src="images/ill-konfigurator.png" alt="Konfigurátor produktu – výběr rozměru, materiálu a barvy" /></div>
       <div>
-        <span class="idx">04</span>
         <h2>Postavím konfigurátor nebo filtr</h2>
         <div class="body"><p>Když má produkt spoustu variant a parametrů, zákazník se v něm snadno ztratí — a radši odejde, než aby se proklikával nekonečným seznamem.</p><p>Připravím konfigurátor nebo chytrý filtr, který ho provede a dovede přesně k té variantě nebo konfiguraci, kterou potřebuje. Vy získáte spokojenějšího zákazníka a méně dotazů „který si mám vybrat?", on získá jistotu, že si vybral správně.</p></div>
       </div>
     </article>
 <article class="service-detail">
-      <div class="illu"><img src="images/ill-zakaznici.png" alt="Zaměřovač na skupinu lidí a firemní vizitka" /></div>
+      <div class="illu"><span class="idx">05</span><img src="images/ill-zakaznici.png" alt="Zaměřovač na skupinu lidí a firemní vizitka" /></div>
       <div>
-        <span class="idx">05</span>
         <h2>Najdu a oslovím nové zákazníky</h2>
         <div class="body"><p>Mám k dispozici podrobnou databázi českých firem — vím, čím se zabývají, kde působí i jak jsou velké. Díky tomu dokážu vybrat přesně ty, pro které dává vaše nabídka smysl.</p><p>A nezůstanu jen u seznamu. Oslovím je nabídkou přizpůsobenou tomu, co dělají — ne plošným spamem, ale zprávou, která sedí na míru. Tohle se nehodí jen e-shopům; využije to každá firma, která hledá nové zákazníky.</p></div>
       </div>
@@ -571,10 +573,11 @@
     <h2>Co ještě umím</h2>
     <p class="lead">Nejsou to věci, na kterých dnes stavím nejvíc, ale když je budete potřebovat, jsem připravený.</p>
     <div class="pill-row">
-      <span class="pill">Monitoring konkurence</span>
-      <span class="pill">SEO</span>
-      <span class="pill">PPC</span>
-      <span class="pill">Obsahový marketing</span>
+      <span class="pill"><svg width="26" height="26" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h2.2l2.6 11.2h11.4l2.2-8H6"/></svg>Monitoring<br/>konkurence</span>
+      <span class="pill"><svg width="26" height="26" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.4v2.4M12 19.2v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.4 12h2.4M19.2 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/></svg>SEO</span>
+      <span class="pill"><svg width="26" height="26" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5v3a1.5 1.5 0 0 0 1.5 1.5H7l5 4V6.5l-5 4H4.5A1.5 1.5 0 0 0 3 12z"/><path d="M16.5 8.6a5 5 0 0 1 0 6.8M19 6a8.5 8.5 0 0 1 0 12"/></svg>PPC</span>
+      <span class="pill"><svg width="26" height="26" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20V10M8.5 20V5M14 20v-7M19.5 20V8"/><path d="M3 6.5 9 3l5 3.5 6-3"/></svg>Obsahový<br/>marketing</span>
+      <span class="pill pill-more"><svg width="26" height="26" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Nebo<br/>něco jiného?</span>
     </div>
   </div>
 </section>
@@ -634,7 +637,7 @@
     <p class="lead">Rozjedeme to ve třech krocích — a bez závazků</p>
   </div>
 </section>
-<section id="jak-detail-section" class="bg-cream wave-section" style="padding:91px 0;">
+<section id="jak-detail-section" class="bg-cream wave-section" style="padding:36px 0 80px;">
   <img src="images/img-07-26670d58a4.png" alt="" aria-hidden="true" class="jak-wave-el" />
 
   <div class="wrap" style="max-width:1080px;">
@@ -734,8 +737,12 @@
       </details>
       </div>
     </div></header>
-<section class="bg-white kontakt-hero">
+<section class="bg-white kontakt-hero wave-section">
+  <img src="images/img-06-001f790cbe.png" alt="" aria-hidden="true" class="kontakt-wave-el" />
   <h1 class="sr-only">Napište mi</h1>
+  <div class="wrap center" style="margin-bottom:22px;">
+    <p class="eyebrow">Kontakt</p>
+  </div>
   <div class="wrap kontakt-grid">
     <div class="kontakt-robot">
       <img class="robot" src="images/ill-napiste-mi.png" alt="Robot Plechajda s bublinou: Napište mi, pomůžu vám ušetřit čas, peníze a starosti" />
@@ -747,8 +754,8 @@
           <input type="text" name="jmeno" required placeholder="Jméno a příjmení *" aria-label="Jméno a příjmení (povinné)" />
           <input type="email" name="email" required placeholder="E-mail *" aria-label="E-mail (povinný)" />
           <input type="tel" name="telefon" placeholder="Telefon (nepovinné)" aria-label="Telefon (nepovinné)" />
-          <select name="tema" aria-label="O čem je poptávka">
-            <option value="">O čem je poptávka?</option>
+          <select name="tema" aria-label="S čím můžu pomoci">
+            <option value="">S čím můžu pomoci?</option>
             <option>Produktové popisky</option>
             <option>SEO kategorie a filtrační stránky</option>
             <option>Kontrola parametrů</option>
@@ -829,11 +836,14 @@
       </details>
       </div>
     </div></header>
-<div class="fourofour">
+<div class="wave-section">
+  <img src="images/img-07-26670d58a4.png" alt="" aria-hidden="true" class="ctyri-wave-el" />
+  <div class="fourofour">
   <p class="code">404</p>
   <h1 style="font-size:26px;margin-top:12px;">Tahle stránka se mi nepodařila najít</h1>
   <p class="lead">Asi jsem ji někam mechanicky zařadil a zapomněl kam. Zkuste to prosím z úvodní stránky.</p>
   <a href="#" class="btn btn-primary" style="margin-top:24px;">Zpět na úvod</a>
+  </div>
 </div>
 <footer class="site">
   <div class="wrap grid">
