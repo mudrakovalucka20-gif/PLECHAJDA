@@ -250,11 +250,12 @@
   /* kontakt - dvousloupcove rozvrzeni: robot vlevo, text a formular vpravo */
   #page-kontakt > section{padding:16px 0;}
   #page-kontakt .kontakt-hero{padding:18px 0 0;}
-  .kontakt-head{text-align:center;max-width:720px;margin:0 auto 30px;}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;}
+  #page-kontakt .kontakt-hero{padding:34px 0 0;}
   .kontakt-grid{display:grid;grid-template-columns:1fr;gap:28px;align-items:center;}
   @media(min-width:920px){.kontakt-grid{grid-template-columns:0.85fr 1.15fr;gap:40px;align-items:center;}}
   .kontakt-robot{position:relative;text-align:center;}
-  .kontakt-robot img.robot{position:relative;z-index:1;width:100%;max-width:420px;height:auto;margin:0 auto;display:block;}
+  .kontakt-robot img.robot{position:relative;z-index:1;width:100%;max-width:470px;height:auto;margin:0 auto;display:block;}
   #page-kontakt h1{margin-top:0 !important;font-size:clamp(36px, 5vw, 54px);letter-spacing:-0.02em;line-height:1.08;}
   #page-kontakt .lead{margin-top:14px;line-height:1.7;}
   #page-kontakt .lead .hi{color:var(--color-brand);font-weight:700;}
@@ -733,15 +734,10 @@
       </div>
     </div></header>
 <section class="bg-white kontakt-hero">
-  <div class="wrap">
-    <div class="kontakt-head">
-      <h1>Napište mi</h1>
-      <p class="lead">Napište mi, s čím byste potřebovali pomoc.<br/>Pokud to bude něco, v čem si budu opravdu věřit,<br/>jsem ochotný na ukázku pracovat <span class="hi">dva týdny zdarma</span>.<br/>Tak se ozvěte!</p>
-    </div>
-  </div>
+  <h1 class="sr-only">Napište mi</h1>
   <div class="wrap kontakt-grid">
     <div class="kontakt-robot">
-      <img class="robot" src="images/ill-robot-bublina.png" alt="Robot Plechajda s bublinou: Pomůžu vám ušetřit čas, peníze a starosti" />
+      <img class="robot" src="images/ill-napiste-mi.png" alt="Robot Plechajda s bublinou: Napište mi, pomůžu vám ušetřit čas, peníze a starosti" />
     </div>
     <div class="kontakt-obsah">
       <form class="form-card" action="#" method="post">
