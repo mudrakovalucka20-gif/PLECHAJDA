@@ -308,6 +308,12 @@
   .cc-grid{display:grid;grid-template-columns:1fr;gap:26px;}
   @media(min-width:720px){.cc-grid{grid-template-columns:1fr 1fr;gap:0;}}
   .cc-item{display:flex;align-items:center;gap:18px;justify-content:center;padding:4px 12px;}
+  /* na uzkych displejich zarovnat ikony pod sebe a skupinu vycentrovat */
+  @media(max-width:719px){
+    .cc-item{justify-content:flex-start;width:262px;max-width:100%;margin:0 auto;}
+    .form-consent{align-items:flex-start;}
+    .form-consent input{margin-top:3px;}
+  }
   @media(min-width:720px){.cc-item + .cc-item{border-left:1px solid rgba(34,31,32,.13);}}
   .cc-icon{flex:none;width:66px;height:66px;border-radius:50%;background:#fce4dc;display:flex;align-items:center;justify-content:center;}
   .cc-label{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--color-brand);}
