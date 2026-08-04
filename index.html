@@ -240,13 +240,34 @@
   .contact-grid dd.op{color:var(--color-ink-soft);font-size:16px;line-height:1.6;}
 
 
-  /* kontakt - podoba dle navrhu: velky robot, nadpis s cackami, kontakty v zaoblenem boxu */
+  /* kontakt - dvousloupcove rozvrzeni: robot vlevo, text a formular vpravo */
   #page-kontakt > section{padding:16px 0;}
-  #page-kontakt .kontakt-hero{padding:10px 0 0;}
-  #page-kontakt .kontakt-hero img.robot{height:clamp(132px, 17vw, 198px);width:auto;margin:0 auto;display:block;}
-  #page-kontakt h1{position:relative;display:inline-block;margin-top:2px !important;font-size:clamp(34px, 5vw, 52px);letter-spacing:-0.02em;line-height:1.05;}
-  #page-kontakt .lead{margin-top:12px;line-height:1.6;}
+  #page-kontakt .kontakt-hero{padding:18px 0 0;}
+  .kontakt-grid{display:grid;grid-template-columns:1fr;gap:28px;align-items:center;}
+  @media(min-width:920px){.kontakt-grid{grid-template-columns:0.9fr 1.1fr;gap:44px;align-items:center;}}
+  .kontakt-robot{position:relative;text-align:center;}
+  .kontakt-robot img.robot{position:relative;z-index:1;width:auto;height:clamp(210px, 30vw, 380px);margin:0 auto;display:block;}
+  .kontakt-robot::before{content:"";position:absolute;left:6%;right:6%;top:8%;bottom:2%;background:var(--color-cream);border-radius:48% 52% 44% 56%/52% 46% 54% 48%;}
+  #page-kontakt h1{margin-top:0 !important;font-size:clamp(34px, 5vw, 52px);letter-spacing:-0.02em;line-height:1.05;}
+  #page-kontakt .lead{margin-top:14px;line-height:1.65;}
   #page-kontakt .lead .hi{color:var(--color-brand);}
+  @media(max-width:919px){#page-kontakt .kontakt-obsah{text-align:center;}}
+
+  /* kontaktni formular */
+  .form-card{background:var(--color-cream);border-radius:24px;padding:24px;margin-top:22px;text-align:left;}
+  .form-grid{display:grid;grid-template-columns:1fr;gap:14px;}
+  @media(min-width:620px){.form-grid{grid-template-columns:1fr 1fr;}}
+  .form-card input,.form-card select,.form-card textarea{width:100%;background:#fff;border:1px solid #f0dcd5;border-radius:12px;padding:14px 16px;font:inherit;font-size:15px;color:var(--color-ink);}
+  .form-card textarea{min-height:112px;resize:vertical;}
+  .form-card .full{grid-column:1/-1;}
+  .form-card ::placeholder{color:#8d817d;}
+  .form-card input:focus,.form-card select:focus,.form-card textarea:focus{outline:2px solid var(--color-brand);outline-offset:1px;border-color:var(--color-brand);}
+  .form-bottom{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin-top:16px;}
+  .form-consent{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--color-ink-soft);cursor:pointer;}
+  .form-consent input{width:18px;height:18px;flex:none;padding:0;accent-color:var(--color-brand);}
+  .form-consent a{color:var(--color-brand);text-decoration:underline;}
+  .btn-send{display:inline-flex;align-items:center;gap:10px;background:var(--color-brand-strong);color:#fff;border:0;border-radius:12px;padding:15px 26px;font:inherit;font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:background .15s;width:auto;}
+  .btn-send:hover{background:#c44d2b;}
 
   .contact-card{background:var(--color-cream);border-radius:28px;padding:24px 24px;max-width:1040px;margin:16px auto 0;}
   .cc-grid{display:grid;grid-template-columns:1fr;gap:26px;}
@@ -704,10 +725,38 @@
       </div>
     </div></header>
 <section class="bg-white kontakt-hero">
-  <div class="wrap center" style="max-width:780px;">
-    <img class="robot" src="images/img-17-d3a5039fea.svg" alt="Robot Plechajda" />
-    <h1>Napište mi</h1>
-    <p class="lead">Napište mi, s čím byste potřebovali pomoc.<br/>Pokud to bude něco, v čem si budu opravdu věřit,<br/>jsem ochotný na ukázku pracovat <span class="hi">dva týdny zdarma</span>.<br/>Tak se ozvěte!</p>
+  <div class="wrap kontakt-grid">
+    <div class="kontakt-robot">
+      <img class="robot" src="images/img-17-d3a5039fea.svg" alt="Robot Plechajda" />
+    </div>
+    <div class="kontakt-obsah">
+      <h1>Napište mi</h1>
+      <p class="lead">Napište mi, s čím byste potřebovali pomoc.<br/>Pokud to bude něco, v čem si budu opravdu věřit,<br/>jsem ochotný na ukázku pracovat <span class="hi">dva týdny zdarma</span>.<br/>Tak se ozvěte!</p>
+
+      <form class="form-card" action="#" method="post">
+        <div class="form-grid">
+          <input type="text" name="jmeno" required placeholder="Jméno a příjmení *" aria-label="Jméno a příjmení (povinné)" />
+          <input type="email" name="email" required placeholder="E-mail *" aria-label="E-mail (povinný)" />
+          <input type="tel" name="telefon" placeholder="Telefon (nepovinné)" aria-label="Telefon (nepovinné)" />
+          <select name="tema" aria-label="O čem je poptávka">
+            <option value="">O čem je poptávka?</option>
+            <option>Produktové popisky</option>
+            <option>SEO kategorie a filtrační stránky</option>
+            <option>Kontrola parametrů</option>
+            <option>Konfigurátor nebo filtr</option>
+            <option>Hledání nových zákazníků</option>
+            <option>Něco jiného</option>
+          </select>
+          <textarea class="full" name="zprava" placeholder="Napište mi, s čím potřebujete pomoct..." aria-label="Vaše zpráva"></textarea>
+        </div>
+        <div class="form-bottom">
+          <label class="form-consent"><input type="checkbox" name="souhlas" required /><span>Souhlasím se <a href="#">zpracováním osobních údajů</a>.</span></label>
+          <button type="submit" class="btn-send">Odeslat zprávu
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.5 2.5 11 13"/><path d="M21.5 2.5 15 21l-4-8-8-4z"/></svg>
+          </button>
+        </div>
+      </form>
+    </div>
   </div>
 </section>
 <section style="padding-top:0;">
