@@ -232,7 +232,7 @@
   .pill:hover svg{transform:scale(1.12) rotate(-6deg);}
   @media(prefers-reduced-motion:reduce){.pill,.pill svg{transition:none;}.pill:hover{transform:none;}.pill:hover svg{transform:none;}}
   .pill svg{flex:none;color:var(--color-brand);background:rgba(221,105,66,.14);border-radius:12px;padding:7px;box-sizing:content-box;transition:transform .18s ease;}
-  .pill-more{background:rgba(221,105,66,.13);box-shadow:none;font:inherit;font-weight:600;cursor:pointer;}
+  .pill-more{background:rgba(221,105,66,.13);box-shadow:none;font-family:inherit;font-size:15px;line-height:1.12;font-weight:600;cursor:pointer;}
   .pill-more:hover{background:rgba(221,105,66,.22);}
   .modal{border:0;border-radius:24px;padding:0;max-width:460px;width:calc(100% - 32px);box-shadow:0 30px 80px rgba(34,31,32,.28);}
   .modal::backdrop{background:rgba(34,31,32,.45);}
@@ -243,8 +243,8 @@
   .modal-close:hover{background:rgba(34,31,32,.06);}
 
   /* vlastni kurzor v rucne kreslenem stylu + iskry pri kliknuti */
-  html,body{cursor:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2732%27%20height%3D%2732%27%20viewBox%3D%270%200%2032%2032%27%3E%3Cg%20transform%3D%27translate%286%208%29%20rotate%28-37%29%20scale%281.0%29%27%3E%3Cpath%20d%3D%27M0%200%20L0%2017.5%20L4.6%2013.6%20L7.9%2021%20L11%2019.5%20L7.7%2012.4%20L14%2012.2%20Z%27%20fill%3D%27%23ffffff%27%20stroke%3D%27%23111111%27%20stroke-width%3D%271.7%27%20stroke-linejoin%3D%27round%27%20stroke-linecap%3D%27round%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") 6 8, auto;}
-  a,button,summary,.pill,select,[role="button"],.kontakt-btn,.btn{cursor:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2732%27%20height%3D%2732%27%20viewBox%3D%270%200%2032%2032%27%3E%3Cg%20transform%3D%27translate%286%208%29%20rotate%28-37%29%20scale%281.14%29%27%3E%3Cpath%20d%3D%27M0%200%20L0%2017.5%20L4.6%2013.6%20L7.9%2021%20L11%2019.5%20L7.7%2012.4%20L14%2012.2%20Z%27%20fill%3D%27%23ffffff%27%20stroke%3D%27%23111111%27%20stroke-width%3D%271.6%27%20stroke-linejoin%3D%27round%27%20stroke-linecap%3D%27round%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") 6 8, pointer;}
+  html,body{cursor:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2730%27%20height%3D%2730%27%20viewBox%3D%270%200%2030%2030%27%3E%3Cg%20transform%3D%27translate%283%202%29%20scale%281.0%29%27%3E%3Cpath%20d%3D%27M0%200%20L0%2017.5%20L4.6%2013.6%20L7.9%2021%20L11%2019.5%20L7.7%2012.4%20L14%2012.2%20Z%27%20fill%3D%27%23ffffff%27%20stroke%3D%27%23111111%27%20stroke-width%3D%271.8%27%20stroke-linejoin%3D%27round%27%20stroke-linecap%3D%27round%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") 3 2, auto;}
+  a,button,summary,.pill,select,[role="button"],.kontakt-btn,.btn{cursor:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2730%27%20height%3D%2730%27%20viewBox%3D%270%200%2030%2030%27%3E%3Cg%20transform%3D%27translate%283%202%29%20scale%281.12%29%27%3E%3Cpath%20d%3D%27M0%200%20L0%2017.5%20L4.6%2013.6%20L7.9%2021%20L11%2019.5%20L7.7%2012.4%20L14%2012.2%20Z%27%20fill%3D%27%23ffffff%27%20stroke%3D%27%23111111%27%20stroke-width%3D%271.7%27%20stroke-linejoin%3D%27round%27%20stroke-linecap%3D%27round%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") 3 2, pointer;}
   input,textarea{cursor:text;}
   .klik-iskry{position:fixed;z-index:9999;width:0;height:0;pointer-events:none;}
   .klik-iskry i{position:absolute;left:0;top:0;width:3px;height:13px;border-radius:2px;background:#F64516;transform-origin:50% 100%;animation:iskra .5s cubic-bezier(.2,.7,.3,1) forwards;}
@@ -324,14 +324,13 @@
   .wave-section{position:relative;overflow:hidden;}
   .wave-section > .wrap{position:relative;z-index:10;}
   .wave-svg{position:absolute;z-index:0;pointer-events:none;user-select:none;}
-  .kontakt-wave-el{position:absolute;left:-190px;bottom:-190px;z-index:0;width:620px;max-width:none;transform:rotate(18deg);pointer-events:none;user-select:none;}
   .ctyri-wave-el{position:absolute;right:-150px;bottom:-180px;z-index:0;width:560px;max-width:none;pointer-events:none;user-select:none;}
   .sluzby-wave-el{position:absolute;right:-170px;top:-150px;z-index:0;width:560px;max-width:none;transform:scaleX(-1);pointer-events:none;user-select:none;}
+  .sluzby-wave-bot{position:absolute;left:-180px;bottom:-158px;z-index:0;width:620px;max-width:none;transform:rotate(30deg);pointer-events:none;user-select:none;}
   .wave-section > .fourofour{position:relative;z-index:10;}
   /* dekorativni vlnky na malych obrazovkach zmensit, at nezabiraji pul displeje */
   @media(max-width:719px){
-    .omne-wave-el,.omne-wave-bot,.coumim-wave-el,.jak-wave-el,.kontakt-wave-el,.ctyri-wave-el,.sluzby-wave-el{width:320px;}
-    .kontakt-wave-el{left:-120px;bottom:-120px;}
+    .omne-wave-el,.omne-wave-bot,.coumim-wave-el,.jak-wave-el,.ctyri-wave-el,.sluzby-wave-el,.sluzby-wave-bot{width:320px;}
     .ctyri-wave-el{right:-100px;bottom:-110px;}
     .sluzby-wave-el{right:-110px;top:-90px;}
   }
@@ -559,6 +558,7 @@
 </section>
 <section class="wave-section">
   <img src="images/img-03-14a2f4b6d5.png" alt="" aria-hidden="true" class="sluzby-wave-el" />
+  <img src="images/img-06-001f790cbe.png" alt="" aria-hidden="true" class="sluzby-wave-bot" />
   <div class="wrap" style="max-width:1040px;">
     <article class="service-detail">
       <div class="illu"><span class="idx">01</span><img src="images/ill-popisky.png" alt="Notebook s recenzí produktu a psaní popisku" /></div>
@@ -787,7 +787,6 @@
       </div>
     </div></header>
 <section class="bg-white kontakt-hero wave-section">
-  <img src="images/img-06-001f790cbe.png" alt="" aria-hidden="true" class="kontakt-wave-el" />
   <h1 class="sr-only">Napište mi</h1>
   <div class="wrap center" style="margin-bottom:22px;">
     <p class="eyebrow">Kontakt</p>
